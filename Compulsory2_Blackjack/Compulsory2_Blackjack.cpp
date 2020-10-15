@@ -37,7 +37,7 @@ int value;
 //    }
 //}
 
-void addPlayerCard() 
+void addPlayerCard() //gives player a random number from 1-10
 {
     if (phandSize <= 5) 
     {
@@ -52,7 +52,7 @@ void addPlayerCard()
     
 }
 
-void addHouseCard() 
+void addHouseCard()  //gives house a random number from 1-10
 {
     if (hhandSize <= 5) 
     {
@@ -67,7 +67,7 @@ void addHouseCard()
 
 }
 
-void printHand() 
+void printHand() //prints what the player has and house has
 {
     std::cout << "Your current hand is " << std::endl;
     for (int i = 0; i < phandSize; i++)
@@ -81,7 +81,7 @@ void printHand()
     }
 }
 
-void sumHands()
+void sumHands() // tells player the total sum of what they have in hand
 {
     hhandSum = 0;
     phandSum = 0;
@@ -105,7 +105,7 @@ void game() {
     sumHands();
     printHand();
 
-    if (phandSum == 21)
+    if (phandSum == 21) // if the player or house get 21 they win
     {
         std::cout << "Player wins!" << std::endl;
     }
@@ -116,7 +116,7 @@ void game() {
 
     while (houseDone == false || playerDone == false)
     {
-        if (playerDone == false)
+        if (playerDone == false) //gives the player option to draw another random number
         {
             std::cout << "Would you like to hit? Yes = 1, No = 2 " << std::endl;
             std::cin >> phit;
@@ -188,14 +188,14 @@ void game() {
             }
         }
     }
+    std::cout << " " << std::endl;
 }
 
 int main()
 {
-   /* std::cout << "Welcome to Blackjack! Ready to play 1 = yes, 2 = no " << std::endl;
-    std::cin >> answer;*/
+   
     while (flag == true) {
-        std::cout << "Want to play? yes = 1, no = 2 " << std::endl;
+        std::cout << "Welcome to Blackjack! Ready to play? yes = 1, no = 2 " << std::endl;
         std::cin >> answer;
         if (answer == 1) {
             game();
